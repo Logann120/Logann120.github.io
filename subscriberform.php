@@ -1,10 +1,10 @@
-<form method="post" action="subscriberform.php">
+<?php
+// The message
+$message = $_POST['message'];
 
+// In case any of our lines are larger than 70 characters, we should use wordwrap()
+$message = wordwrap($message, 70, "\r\n");
 
-<textarea name="message"></textarea>
-
-
-<input type="submit">
-
-
-</form>
+// Send
+mail('logannoonan120@gmail.com', 'My Subject', $message);
+?>
